@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 void main() {
+  debugPaintSizeEnabled = false;
   runApp(MyApp());
 }
 
@@ -145,6 +147,11 @@ class MyApp extends StatelessWidget {
       ),
     );
 
+    final mainImage = Image.asset(
+      'assets/images/pavlova.jpg',
+      fit: BoxFit.cover,
+    );
+
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
@@ -161,6 +168,7 @@ class MyApp extends StatelessWidget {
                   width: 440,
                   child: leftColumn,
                 ),
+                mainImage,
               ],
             ),
           ),
