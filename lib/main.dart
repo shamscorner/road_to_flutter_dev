@@ -8,15 +8,48 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter layout demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Flutter layout demo'),
     );
   }
 }
+
+Widget titleSection = Container(
+  padding: const EdgeInsets.all(32.0),
+  child: Row(
+    children: [
+      Expanded(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              padding: const EdgeInsets.only(bottom: 8.0),
+              child: Text(
+                'Oeschinen Lake Campground',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+            Text(
+              'Kandersteg, Switzerland',
+              style: TextStyle(
+                color: Colors.grey[500],
+              ),
+            ),
+          ],
+        ),
+      ),
+      Icon(
+        Icons.star,
+        color: Colors.red[500],
+      ),
+      Text('41'), 
+    ],
+  ),
+);
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({this.title});
@@ -29,10 +62,8 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
       ),
-      body: Container(
-        child: Center(
-          child: Text('Hello World'),
-        ),
+      body: Column(
+        children: [titleSection],
       ),
     );
   }
