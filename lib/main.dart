@@ -104,6 +104,13 @@ class MyHomePage extends StatelessWidget {
     ),
   );
 
+  final Widget _topHeroSection = Image.asset(
+    'assets/images/lake.jpg',
+    width: 600,
+    height: 240,
+    fit: BoxFit.cover,
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -112,6 +119,7 @@ class MyHomePage extends StatelessWidget {
       ),
       body: Column(
         children: [
+          _topHeroSection,
           _titleSection,
           _buttonSection,
           _textSection,
