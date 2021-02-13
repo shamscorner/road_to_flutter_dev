@@ -8,12 +8,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Grid view with extent',
+      title: 'Grid view with count',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Grid view with extent'),
+      home: MyHomePage(title: 'Grid view with count'),
     );
   }
 }
@@ -35,8 +35,8 @@ class MyHomePage extends StatelessWidget {
     );
   }
 
-  Widget _buildGrid() => GridView.extent(
-        maxCrossAxisExtent: 150,
+  Widget _buildGrid() => GridView.count(
+        crossAxisCount: 2,
         padding: const EdgeInsets.all(4),
         mainAxisSpacing: 4,
         crossAxisSpacing: 4,
