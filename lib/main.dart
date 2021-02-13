@@ -8,12 +8,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Grid view with extent',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Grid view with extent'),
     );
   }
 }
@@ -29,11 +29,24 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
       ),
-      body: Container(
-        child: Center(
-          child: Text('Hello World'),
-        ),
+      body: Center(
+        child: _buildGrid(),
       ),
     );
   }
+
+  Widget _buildGrid() => GridView.extent(
+        maxCrossAxisExtent: 150,
+        padding: const EdgeInsets.all(4),
+        mainAxisSpacing: 4,
+        crossAxisSpacing: 4,
+        children: _buildGridTileList(30),
+      );
+
+  List<Container> _buildGridTileList(int count) => List.generate(
+        count,
+        (index) => Container(
+          child: Image.asset('assets/images/pic$index.jpg'),
+        ),
+      );
 }
