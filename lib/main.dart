@@ -43,9 +43,16 @@ class MyHomePage extends StatelessWidget {
         children: _buildGridTileList(30),
       );
 
-  List<Container> _buildGridTileList(int count) => List.generate(
+  List<GridTile> _buildGridTileList(int count) => List.generate(
         count,
-        (index) => Container(
+        (index) => GridTile(
+          footer: GridTileBar(
+            title: Text('Demo Title'),
+            backgroundColor: Colors.black45,
+            leading: Icon(
+              Icons.title
+            ),
+          ),
           child: Image.asset('assets/images/pic$index.jpg'),
         ),
       );
