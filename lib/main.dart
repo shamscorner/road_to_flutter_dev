@@ -117,7 +117,7 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
       ),
-      body: Column(
+      body: ListView(
         children: [
           _topHeroSection,
           _titleSection,
